@@ -46,7 +46,7 @@ module UART_receiver(
             mesgul<=0;
         end
         else if ( !system_rst ) begin
-
+            if(!mesgul)data_en<=0;
             if(!mesgul && RX==0&& num_of_cycles ==(cycles_per_bit-1)/2)begin
                 data_en<=0;
                 mesgul <=1;
